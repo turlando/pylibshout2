@@ -104,7 +104,7 @@ def _set_audio_info(obj, name, value):
     f = libshout.shout_set_audio_info
     f.argtypes = [c_void_p, c_char_p, c_char_p]
     f.restype = c_int
-    return f(obj, name, str(value).encode('ascii'))
+    return f(obj, str(name).encode('ascii'), str(value).encode('ascii'))
 
 
 @check_return_code
